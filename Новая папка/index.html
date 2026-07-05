@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout</title>
+
+<style>
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,Arial;
+  background:#0f0f0f;
+}
+
+.container{
+  display:flex;
+  min-height:100vh;
+}
+
+/* LEFT */
+.left{
+  flex:1;
+  background:#fff;
+  padding:40px;
+  box-sizing:border-box;
+}
+
+.checkout-subtitle{
+  font-size:13px;
+  color:#666;
+  text-align:center;
+  padding-bottom:12px;
+  margin-bottom:18px;
+  border-bottom:1px solid #eee;
+}
+
+h2{
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+label{
+  font-size:12px;
+  color:#666;
+  display:block;
+  margin-top:10px;
+}
+
+input, select{
+  width:100%;
+  padding:11px;
+  margin-top:5px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  font-size:14px;
+  box-sizing:border-box;
+}
+
+.row{
+  display:flex;
+  gap:10px;
+}
+
+.row div{ flex:1; }
+
+/* PAYMENT */
+.paybox{
+  border:1px solid #ddd;
+  border-radius:12px;
+  padding:12px;
+  margin-top:10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.paybox.active{
+  border:2px solid #111;
+  background:#f7f7f7;
+}
+
+.card-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.card-logo{
+  width:45px;
+  height:22px;
+}
+
+/* BUTTON */
+button{
+  width:100%;
+  padding:14px;
+  margin-top:20px;
+  background:black;
+  color:white;
+  border:none;
+  border-radius:10px;
+  font-size:15px;
+  cursor:pointer;
+}
+
+/* RIGHT */
+.right{
+  flex:1;
+  background:#111;
+  color:#fff;
+  padding:40px;
+  box-sizing:border-box;
+}
+
+.brand{
+  font-size:20px;
+  font-weight:600;
+}
+
+.price{
+  font-size:34px;
+  margin-top:15px;
+  color:#00ff99;
+}
+
+.info{
+  margin-top:15px;
+  color:#aaa;
+  font-size:14px;
+  line-height:1.5;
+}
+
+a{
+  color:#00ff99;
+  text-decoration:none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .container{
+    flex-direction:column;
+  }
+
+  .left,.right{
+    padding:20px;
+  }
+
+  .price{
+    font-size:26px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- LEFT -->
+<div class="left">
+
+<div class="checkout-subtitle">
+Initial payment for employment services
+</div>
+
+<h2>Checkout</h2>
+
+<label>Email</label>
+<input>
+
+<div class="row">
+  <div>
+    <label>First Name</label>
+    <input>
+  </div>
+  <div>
+    <label>Last Name</label>
+    <input>
+  </div>
+</div>
+
+<label>Country</label>
+<select>
+  <option>United States</option>
+  <option>Canada</option>
+  <option>United Kingdom</option>
+  <option>Germany</option>
+  <option>Nigeria</option>
+  <option>India</option>
+  <option>Ukraine</option>
+</select>
+
+<label>Address</label>
+<input>
+<input>
+
+<div class="row">
+  <input placeholder="City">
+  <input placeholder="State">
+</div>
+
+<input placeholder="Postal Code">
+
+<h3>Payment method</h3>
+
+<div class="paybox active" onclick="select(this)">
+  <div class="card-left">
+    <svg class="card-logo" viewBox="0 0 60 20">
+      <text x="0" y="15" font-size="14" font-weight="bold" fill="#1a1f71">VISA</text>
+    </svg>
+    <div>
+      <strong>Visa</strong><br>
+      <span style="font-size:12px;color:#777;">Credit / Debit card</span>
+    </div>
+  </div>
+  <input type="radio" name="p" checked>
+</div>
+
+<div class="paybox" onclick="select(this)">
+  <div class="card-left">
+    <svg class="card-logo" viewBox="0 0 60 20">
+      <circle cx="20" cy="10" r="7" fill="#EB001B"></circle>
+      <circle cx="30" cy="10" r="7" fill="#F79E1B"></circle>
+    </svg>
+    <div>
+      <strong>Mastercard</strong><br>
+      <span style="font-size:12px;color:#777;">Credit / Debit card</span>
+    </div>
+  </div>
+  <input type="radio" name="p">
+</div>
+
+<button onclick="window.location.href='preparing.html'">
+    Pay $200
+</button>
+
+</div>
+
+<!-- RIGHT (RESTORED FULL CONTENT) -->
+<div class="right">
+
+<div class="brand">JS Immigration Consulting</div>
+
+<div class="price">$200</div>
+
+<div class="info">
+Secure checkout system for immigration consulting services.
+</div>
+
+<div class="info">
+JS Immigration Consulting Inc., based in British Columbia, provides expert immigration consulting services for individuals, families, and employers across Canada.
+Our licensed RCIC professionals specialize in work permits, LMIA recruitment, study permits, visitor visas, and strategic immigration advice.
+</div>
+
+<div class="info">
+<strong>Quick Links</strong><br>
+<a href="#">About Us</a><br>
+<a href="#">Express Entry</a><br>
+<a href="#">Work Permit</a><br>
+<a href="#">Study Permit</a><br>
+<a href="#">Visitor Visa</a><br>
+<a href="#">Contact Us</a>
+</div>
+
+<div class="info">
+<strong>Contact</strong><br>
+Monday–Saturday: 9:00 AM – 5:00 PM<br>
++1 (236) 473 0254<br>
+info@jsimmigration.net<br>
+20727 Willoughby Town Centre Dr, Canada
+</div>
+
+</div>
+
+</div>
+
+<script>
+function select(el){
+  document.querySelectorAll('.paybox').forEach(e=>{
+    e.classList.remove('active');
+    e.querySelector('input').checked=false;
+  });
+  el.classList.add('active');
+  el.querySelector('input').checked=true;
+}
+</script>
+
+</body>
+</html>
